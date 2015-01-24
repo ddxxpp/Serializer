@@ -14,7 +14,7 @@ namespace TestSerializer
 		~TestData(){};
 
 		bool		Serialize(Serializer &stream) const;
-		bool		Unserialize(Serializer &stream);
+		bool		Deserialize(Serializer &stream);
 
 		struct DataStruct
 		{
@@ -53,7 +53,7 @@ namespace TestSerializer
 		return true;
 	}
 
-	bool TestData::Unserialize(Serializer &stream)
+	bool TestData::Deserialize(Serializer &stream)
 	{
 		stream.Pop(m_data_struct);
 		unsigned int size = 0;
@@ -107,7 +107,7 @@ namespace TestSerializer
 		src_data.Serialize(temp1);
 
 		Serializer temp2(data, 1024);
-		des_data.Unserialize(temp2);
+		des_data.Deserialize(temp2);
 	}
 }
 
