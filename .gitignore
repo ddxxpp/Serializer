@@ -1,0 +1,3 @@
+serializer.opensdf
+*.sdf
+serializer/Debug/serializer.log
